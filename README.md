@@ -3,9 +3,11 @@ Savable Objects in Xamarin Forms
 
 
 ## How To Use
->Create your object like below
+>Create your object like below:
 
- public class AccountDetails : SavableObject
+
+    
+        public class AccountDetails : SavableObject
     {
         public string Email { get; set; }
         public string Username { get; set; }
@@ -13,6 +15,8 @@ Savable Objects in Xamarin Forms
         public bool IsNotificationEnabled { get; set; }
         
     }
+
+ 
     
  > Add your data to this object. And save it   
  
@@ -26,16 +30,16 @@ Savable Objects in Xamarin Forms
             
 > You can load like below
 
-   AccountDetails aDetail = new AccountDetails();
-            aDetail.Load();
 
+            AccountDetails aDetail = new AccountDetails();
+            aDetail.Load();
             DisplayAlert(aDetail.Email, aDetail.Username, "DONE");
             
 
 
 > You can use easily to define a static property with editing your first class:
 
- public class AccountDetails : SavableObject
+        public class AccountDetails : SavableObject
     {
         [IgnoreSave]
         public static AccountDetails Data { get; set; }
@@ -52,9 +56,17 @@ Savable Objects in Xamarin Forms
         public bool IsNotificationEnabled { get; set; }
         }
 
+   
+
+
+
 >[IgnoreSave] attribute allows not to save that property. And then you can use like that:
 
-   void Display()
+    void Display()
         {
             DisplayAlert(AccountDetails.Data.Email, AccountDetails.Data.Username, "DONE");
         }
+
+
+
+   
